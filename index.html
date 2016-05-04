@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>个人简历</title>
+<script src="./js/jquery-1.7.1.min.js"></script>
+<script>
+document.onreadystatechange = function () {      
+    if(document.readyState=="complete") {            
+        $('.loading').fadeOut();         
+    }else {
+		return;
+	}     
+}      
+</script>
+<link href="./css/style.css" type="text/css" rel="stylesheet">
+<link href="./css/animate.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+<div class="loading"><img src="./image/loading.gif"/></div>
+<div id="container" class="container">
+	<div class="content" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">        
+        <div id="scene1" class="scene active">
+			<div class="s1-content">
+				<div class="cloud"></div>
+				<div class="s1-tag"></div>
+				<img class="headpic circle" src="./image/headpic.jpg" width=150 height=150 />
+				<div class="s1-line1"></div><div class="s1-line2"></div><div class="s1-line3"></div><div class="s1-line4"></div>
+				<div class="s1-name bounceIn bounceInDelay1">彭吉元</div>
+				<div class="s1-school bounceIn bounceInDelay1">河南大学计算机信息工程学院</div>
+				<div class="s1-want bounceIn bounceInDelay1">web前端工程师</div>
+				<div class="s1-status bounceIn bounceInDelay1">2017届毕业生</div>
+				<div class="s1-sex bounceIn bounceInDelay2">男</div>
+				<div class="s1-year bounceIn bounceInDelay3">1994</div>
+				<div class="s1-sing bounceIn bounceInDelay4">唱歌</div>
+				<div class="s1-friend bounceIn bounceInDelay5">交朋友</div>
+				<div class="s1-sport bounceIn bounceInDelay6">运动</div>
+			</div>
+			<div class="arrow">&laquo;</div>
+        </div>
+        <div id="scene2" class="scene">
+			<div class="s2-content">
+			<div class="programmer"></div>
+				<div class="bulb-bottom"></div>
+				<div class="bulb-top"></div>
+				<div class="blackboard"></div>
+				<div class="s2-html bounceInDown bounceInDownDelay1">Html(熟练)</div>
+				<div class="s2-css bounceInDown bounceInDownDelay2">css(熟练)</div>
+				<div class="s2-javascript bounceInDown bounceInDownDelay3">javascript(熟练)</div>
+				<div class="s2-jquery bounceInDown bounceInDownDelay4">jquery(熟练)</div>
+				<div class="s2-html5 bounceInDown bounceInDownDelay5">Html5(熟练)</div>
+				<div class="s2-css3 bounceInDown bounceInDownDelay6">css3(熟练)</div>
+				<div class="s2-php bounceInDown bounceInDownDelay7">Php(熟练)</div>
+			</div>
+			<div class="arrow">&laquo;</div>
+        </div>     
+		<div id="scene3" class="scene">
+			<div class="s3-content">
+				<div class="s3-sun"></div>
+				<div class="s3-sun-lefteyes"></div>
+				<div class="s3-sun-righteyes"></div>
+				<div class="s3-cloud"></div>
+				<div class="s3-bear">
+					<div class="s3-bear-top"></div>
+					<div class="s3-bear-behind"></div>
+					<div class="s3-bear-front"></div>
+				</div>
+				<div class="s3-think"></div>
+				<a id="cat666" alt="猫溜弹幕网" target="_blank" href="http://www.cat666.com"><div class="s3-cat666"></div></a>
+				<a id="kfzxw" alt="开封助学网" target="_blank" href="http://www.kfzxw.com"><div class="s3-kfzxw"></div></a>
+				<a id="zj" alt="支教邦" target="_blank" href="http://zj.cat666.com"><div class="s3-zj"></div></a>
+			</div>
+			<div class="arrow">&laquo;</div>
+        </div>       
+		<div id="scene4" class="scene">
+			<div class="s4-content">
+				<div class="s4-rocket"></div>	
+				<div class="s4-meteor"></div>
+				<div class="s4-planet"></div>
+				<div class="s4-satellite"></div>
+				<a id="s4-QQ" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=731401082&site=qq&menu=yes"><div class="s4-QQ"></div></a>
+				<div class="s4-QQ-number" style="opacity:0">731401082</div>
+				<div class="s4-email"></div>
+				<div class="s4-email-link" style="opacity:0">731401082@qq.com</div>
+				<a target="_blank" href="http://weibo.com/u/5372149855/home?wvr=5"><div class="s4-sina"></div></a>
+				<div class="s4-sina-link" style="opacity:0">猫溜网</div>
+			</div>
+        </div>       
+    </div>
+</div>
+
+<ul id="sceneCtrl" class="scene-ctrl">
+  <li><a href="javascript:" data-index="0" class="cur">1</a></li>
+  <li><a href="javascript:" data-index="1">2</a></li>
+  <li><a href="javascript:" data-index="2">3</a></li>
+  <li><a href="javascript:" data-index="3">4</a></li>
+</ul>
+<script src="./js/iscroll.js"></script>
+<script>
+/*
+ *@author:PJY
+ */
+
+if (window.addEventListener) {
+var mine = new IScroll("#container", {
+	mouseWheel: false,
+	momentum: false,
+	snap: true
+});
+} else {
+	// IE7-IE8
+	window.onmousewheel=document.onmousewheel=function() {return false;}
+	var newYearScroll = {
+		content: $("#container > div"),
+		currentPage: {
+			pageY: 0
+		},
+		next: function() {
+			this.currentPage.pageY++;
+			var index = this.currentPage.pageY;
+			if (index > 9) {
+				index = 9;
+				return this;
+			}
+			this.content.animate({
+				top: -100 * index + "%"
+			}, this.scrollEnd);
+		},
+		prev: function() {
+			this.currentPage.pageY--;
+			var index = this.currentPage.pageY;
+			if (index < 0) {
+				index = 0;
+				return this;
+			}
+			this.content.animate({
+				top: -100 * index + "%"
+			}, this.scrollEnd)
+		},
+		goToPage: function(x, y) {
+			this.currentPage.pageY = y;
+			this.content.animate({
+				top: -100 * y + "%"
+			}, this.scrollEnd);
+		},
+		on: function(name, fn) {
+			this[name] = fn;
+		}
+	}
+}
+
+$(".arrow").on("click", function() {
+	mine.next(); //iscroll内置函数
+	var pageY = mine.currentPage.pageY;		
+	$(".scene").eq(pageY).addClass("active");
+});
+
+$("#sceneCtrl a").on("click", function() {
+	mine.goToPage(0, $(this).attr("data-index") * 1);
+	var pageY = mine.currentPage.pageY;
+	$(".scene").eq(pageY).addClass("active").end();
+});
+
+//使用on(type, fn)方法注册事件 ，具体请查看iscroll文档
+
+mine.on("scrollEnd", function() {
+	var pageY = mine.currentPage.pageY;
+	$("#sceneCtrl .cur").removeClass("cur");
+	$("#sceneCtrl a[data-index=" + pageY + "]").addClass("cur");
+	$(".scene").eq(pageY).siblings().removeClass("active");
+});
+mine.on("scrollStart", function() {
+	var pageY = mine.currentPage.pageY;
+	$(".scene").eq(pageY).siblings().addClass("active");
+});
+
+$(document).bind("keyup", function(event) {
+	var code = event.keyCode;
+	if (code == 38) {
+		var pageY = mine.currentPage.pageY;
+		$(".scene").eq(pageY).prev().addClass("active");
+		mine.prev();
+	} else if (code == 40) {
+		var pageY = mine.currentPage.pageY;
+		$(".scene").eq(pageY).next().addClass("active");
+		mine.next();
+	}
+});
+
+mine.goToPage(0, 0);
+
+</script>
+</body></html>
