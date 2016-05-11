@@ -3,26 +3,53 @@
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>个人简历</title>
-<script src="./js/jquery-1.7.1.min.js"></script>
+<title>彭吉元的个人简历</title>
+<script src="script/jquery-1.7.1.min.js"></script>
 <script>
+
 document.onreadystatechange = function () {      
     if(document.readyState=="complete") {            
-        $('.loading').fadeOut();         
+        $('.loading').fadeOut();
+		$('#scene1').addClass("active");
     }else {
 		return;
 	}     
 }      
 </script>
-<link href="./css/style.css" type="text/css" rel="stylesheet">
-<link href="./css/animate.css" type="text/css" rel="stylesheet">
-</head>
 
+<link href="css/vita.css" type="text/css" rel="stylesheet">
+</head>
 <body>
+<div class="hidden">
+	<img src="./image/bear/bear-behind.png" />
+	<img src="./image/bear/bear-front.png" />
+	<img src="./image/bear/bear-top.png" />
+	<img src="./image/space/meteor.png" />
+	<img src="./image/space/planet.png" />
+	<img src="./image/space/rocket.png" />
+	<img src="./image/space/satellite.png" />
+	<img src="./image/sun/sun-left-eyes.png" />
+	<img src="./image/sun/sun-noeyes.png" />
+	<img src="./image/sun/sun-right-eyes.png" />
+	<img src="./image/aboutme.png" />
+	<img src="./image/blackboard.jpg" />
+	<img src="./image/bulb-bottom.png" />
+	<img src="./image/bulb-top.png" />
+	<img src="./image/cat666.png" />
+	<img src="./image/cloud.png" />
+	<img src="./image/email.png" />
+	<img src="./image/headpic.jpg" />
+	<img src="./image/kfzxw.png" />
+	<img src="./image/programmer.png" />
+	<img src="./image/QQ.png" />
+	<img src="./image/sina.png" />
+	<img src="./image/think.png" />
+	<img src="./image/zj.png" />
+</div>
 <div class="loading"><img src="./image/loading.gif"/></div>
 <div id="container" class="container">
-	<div class="content" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">        
-        <div id="scene1" class="scene active">
+	<div class="content">        
+        <div id="scene1" class="scene">
 			<div class="s1-content">
 				<div class="cloud"></div>
 				<div class="s1-tag"></div>
@@ -37,6 +64,7 @@ document.onreadystatechange = function () {
 				<div class="s1-sing bounceIn bounceInDelay4">唱歌</div>
 				<div class="s1-friend bounceIn bounceInDelay5">交朋友</div>
 				<div class="s1-sport bounceIn bounceInDelay6">运动</div>
+				<a title="点击下载" class="word" href="./myinfo.doc"></a>
 			</div>
 			<div class="arrow">&laquo;</div>
         </div>
@@ -53,6 +81,11 @@ document.onreadystatechange = function () {
 				<div class="s2-html5 bounceInDown bounceInDownDelay5">Html5(熟练)</div>
 				<div class="s2-css3 bounceInDown bounceInDownDelay6">css3(熟练)</div>
 				<div class="s2-php bounceInDown bounceInDownDelay7">Php(熟练)</div>
+				<div class="s2-gulp bounceInDown bounceInDownDelay8">Gulp.js(熟练)</div>
+				<div class="s2-sass bounceInDown bounceInDownDelay9">sass(熟练)</div>
+				<div class="s2-git bounceInDown bounceInDownDelay10">git(熟练)</div>
+				<div class="s2-nodejs bounceInDown bounceInDownDelay11">Node.js(入门)</div>
+				<div class="s2-angular bounceInDown bounceInDownDelay12">Angular.js(入门)</div>
 			</div>
 			<div class="arrow">&laquo;</div>
         </div>     
@@ -97,12 +130,8 @@ document.onreadystatechange = function () {
   <li><a href="javascript:" data-index="2">3</a></li>
   <li><a href="javascript:" data-index="3">4</a></li>
 </ul>
-<script src="./js/iscroll.js"></script>
+<script src="script/iscroll.js"></script>
 <script>
-/*
- *@author:PJY
- */
-
 if (window.addEventListener) {
 var mine = new IScroll("#container", {
 	mouseWheel: false,
