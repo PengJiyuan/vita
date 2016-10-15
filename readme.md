@@ -31,5 +31,5 @@ QQ：731401082
 新浪微博：猫溜网**
 
 
-  [1]: http://www.cat666.com/mydemo/vita/demo.jpg
+  [1]: http://demo.cat666.com/vita/demo.jpg
   [2]: http://myinfo.cat666.com
