@@ -1,0 +1,2363 @@
+@charset "UTF-8";
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #1f2e3d;
+  font: 16px/1.5 Tahoma, Helvetica, Arial, "宋体", sans-serif; }
+
+ul, li {
+  list-style: none; }
+
+.container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0; }
+
+.content {
+  height: 400%;
+  position: absolute;
+  left: 0;
+  right: 0; }
+
+.scene {
+  height: 25%;
+  position: relative;
+  overflow: hidden; }
+
+#scene1 {
+  background: #1f2e3d; }
+
+#scene2 {
+  background: #336666; }
+
+#scene3 {
+  background: #009966; }
+
+#scene4 {
+  background: #1f2e3d; }
+
+.hidden {
+  display: none; }
+
+/*arrow */
+.arrow {
+  z-index: 666;
+  opacity: 1;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -30px;
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  border: 1px solid #fff;
+  cursor: pointer;
+  overflow: hidden;
+  animation: arrow 3s cubic-bezier(0.5, 0, 0.1, 1) infinite;
+  -webkit-animation: arrow 3s cubic-bezier(0.5, 0, 0.1, 1) infinite;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  border-radius: 100%;
+  -webkit-border-radius: 100%; }
+  .arrow:hover {
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused; }
+
+@media screen and (min-width: 800px) {
+  /*loading*/
+  .loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    z-index: 100; }
+
+  .loading img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px; }
+
+  .active .word {
+    display: block;
+    width: 80px;
+    height: 80px;
+    background: url("../image/word.jpg") no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    animation: flipInX 1s 1s;
+    -webkit-animation: flipInX 1s 1s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both; }
+  .active .s1-content {
+    position: absolute;
+    width: 800px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -250px; }
+    .active .s1-content .cloud {
+      width: 150px;
+      height: 74px;
+      left: 0;
+      top: 0;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: sway 8s linear infinite alternate;
+      -webkit-animation: sway 8s linear infinite alternate; }
+  @keyframes sway {
+    0% {
+      left: 200px;
+      top: 0; }
+    25% {
+      left: 150px;
+      top: 25px; }
+    50% {
+      left: 100px;
+      top: 0; }
+    75% {
+      left: 50px;
+      top: 25px; }
+    100% {
+      left: 0;
+      top: 0; } }
+  @-webkit-keyframes sway {
+    0% {
+      left: 200px;
+      top: 0; }
+    25% {
+      left: 150px;
+      top: 25px; }
+    50% {
+      left: 100px;
+      top: 0; }
+    75% {
+      left: 50px;
+      top: 25px; }
+    100% {
+      left: 0;
+      top: 0; } }
+    .active .s1-content .s1-tag {
+      width: 200px;
+      height: 194px;
+      left: 20px;
+      top: 20px;
+      background-color: #fff;
+      position: absolute;
+      background: url("../image/aboutme.png") no-repeat;
+      background-size: 100% 100%;
+      animation-name: lightSpeedIn, swing;
+      -webkit-animation-name: lightSpeedIn, swing;
+      animation-duration: 1s, 2s;
+      -webkit-animation-duration: 1s, 2s;
+      animation-delay: 0s, 1s;
+      -webkit-animation-delay: 0s, 1s;
+      animation-timing-function: ease-out, ease;
+      -webkit-animation-timing-function: ease-out, ease;
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-direction: normal, alternate;
+      -webkit-animation-direction: normal, alternate; }
+    .active .s1-content .headpic {
+      margin: 160px auto;
+      width: 150px;
+      height: 150px;
+      display: block;
+      position: relative;
+      z-index: 50;
+      border-radius: 100%;
+      -webkit-border-radius: 100%; }
+    .active .s1-content .circle {
+      animation-name: bounceIn, shine;
+      -webkit-animation-name: bounceIn, shine;
+      animation-duration: 0.6s, 1.5s;
+      -webkit-animation-duration: 0.6s, 1.5s;
+      animation-delay: 1s, 1.6s;
+      -webkit-animation-delay: 1s, 1.6s;
+      animation-timing-function: ease-in-out, ease;
+      -webkit-animation-timing-function: ease-in-out, ease;
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-direction: normal, alternate;
+      -webkit-animation-direction: normal, alternate;
+      animation-fill-mode: both, both;
+      -webkit-animation-fill-mode: both, both; }
+  @keyframes shine {
+    0% {
+      box-shadow: 0 0 10px #fff;
+      -webkit-box-shadow: 0 0 10px #fff; }
+    100% {
+      box-shadow: 0 0 30px #fff;
+      -webkit-box-shadow: 0 0 30px #fff; } }
+  @-webkit-keyframes shine {
+    0% {
+      box-shadow: 0 0 5px #fff;
+      -webkit-box-shadow: 0 0 30px #fff; }
+    100% {
+      box-shadow: 0 0 5px #fff;
+      -webkit-box-shadow: 0 0 30px #fff; } }
+    .active .s1-content .s1-line1 {
+      width: 5px;
+      background-color: #fff;
+      position: absolute;
+      top: 50px;
+      left: 400px;
+      box-shadow: 0 0 10px #fff;
+      -webkit-box-shadow: 0 0 10px #fff;
+      animation: si-line 0.4s 1.6s;
+      -webkit-animation: si-line 0.4s 1.6s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+  @keyframes si-line {
+    0% {
+      height: 0;
+      top: 180px; }
+    100% {
+      height: 100px;
+      top: 80px; } }
+  @-webkit-keyframes si-line {
+    0% {
+      height: 0;
+      top: 200px; }
+    100% {
+      height: 100px;
+      top: 50px; } }
+    .active .s1-content .s1-line2 {
+      height: 5px;
+      background-color: #fff;
+      position: absolute;
+      top: 240px;
+      left: 150px;
+      box-shadow: 0 0 10px #fff;
+      -webkit-box-shadow: 0 0 10px #fff;
+      animation: si-line2 0.4s 2s;
+      -webkit-animation: si-line2 0.4s 2s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+  @keyframes si-line2 {
+    0% {
+      width: 0;
+      left: 350px; }
+    100% {
+      width: 200px;
+      left: 150px; } }
+  @-webkit-keyframes si-line2 {
+    0% {
+      width: 0;
+      left: 350px; }
+    100% {
+      width: 200px;
+      left: 150px; } }
+    .active .s1-content .s1-line3 {
+      height: 5px;
+      background-color: #fff;
+      position: absolute;
+      top: 240px;
+      left: 460px;
+      box-shadow: 0 0 10px #fff;
+      -webkit-box-shadow: 0 0 10px #fff;
+      animation: si-line3 0.4s 2.4s;
+      -webkit-animation: si-line3 0.4s 2.4s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+  @keyframes si-line3 {
+    0% {
+      width: 0; }
+    100% {
+      width: 200px; } }
+  @-webkit-keyframes si-line3 {
+    0% {
+      width: 0; }
+    100% {
+      width: 200px; } }
+    .active .s1-content .s1-line4 {
+      width: 5px;
+      background-color: #fff;
+      position: absolute;
+      top: 280px;
+      left: 400px;
+      box-shadow: 0 0 10px #fff;
+      -webkit-box-shadow: 0 0 10px #fff;
+      animation: si-line4 0.4s 2.8s;
+      -webkit-animation: si-line4 0.4s 2.8s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+  @keyframes si-line4 {
+    0% {
+      height: 0; }
+    100% {
+      height: 100px; } }
+  @-webkit-keyframes si-line4 {
+    0% {
+      height: 0; }
+    100% {
+      height: 100px; } }
+    .active .s1-content .s1-name {
+      width: 80px;
+      height: 30px;
+      left: 360px;
+      top: 60px;
+      background-color: #fff;
+      line-height: 30px;
+      text-align: center;
+      color: #706f7f;
+      font-weight: bold;
+      position: absolute;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      box-shadow: 0 0 10px #fff;
+      -webkit-box-shadow: 0 0 10px #fff; }
+    .active .s1-content .s1-school {
+      width: 300px;
+      height: 30px;
+      left: 260px;
+      top: 370px;
+      background-color: #fff;
+      line-height: 30px;
+      text-align: center;
+      color: #706f7f;
+      font-weight: bold;
+      position: absolute;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      box-shadow: 0 0 10px #fff;
+      -webkit-box-shadow: 0 0 10px #fff; }
+    .active .s1-content .s1-want {
+      width: 150px;
+      height: 30px;
+      left: 40px;
+      top: 225px;
+      background-color: #fff;
+      line-height: 30px;
+      text-align: center;
+      color: #706f7f;
+      font-weight: bold;
+      position: absolute;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      box-shadow: 0 0 10px #fff;
+      -webkit-box-shadow: 0 0 10px #fff; }
+    .active .s1-content .s1-status {
+      width: 150px;
+      height: 30px;
+      left: 600px;
+      top: 225px;
+      background-color: #fff;
+      line-height: 30px;
+      text-align: center;
+      color: #706f7f;
+      font-weight: bold;
+      position: absolute;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      box-shadow: 0 0 10px #fff;
+      -webkit-box-shadow: 0 0 10px #fff; }
+    .active .s1-content .s1-sex {
+      width: 100px;
+      height: 50px;
+      left: 230px;
+      top: 150px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 60px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .s1-year {
+      width: 140px;
+      height: 70px;
+      left: 180px;
+      top: 280px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 90px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .s1-sing {
+      width: 140px;
+      height: 70px;
+      left: 500px;
+      top: 120px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 90px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .s1-friend {
+      width: 120px;
+      height: 60px;
+      left: 570px;
+      top: 310px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 70px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .s1-sport {
+      width: 100px;
+      height: 50px;
+      left: 500px;
+      top: 280px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 60px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .bounceIn {
+      animation-name: bounceIn, stayBounceIn;
+      -webkit-animation-name: bounceIn, stayBounceIn;
+      animation-duration: 0.8s, 6s;
+      -webkit-animation-duration: 0.8s, 6s;
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-direction: normal, alternate;
+      -webkit-animation-direction: normal, alternate;
+      animation-timing-function: ease-out, linear;
+      -webkit-animation-timing-function: ease-out, linear;
+      animation-fill-mode: both, forwards;
+      -webkit-animation-fill-mode: both, forwards; }
+    .active .s1-content .bounceInDelay1 {
+      animation-delay: 3.2s, 4s;
+      -webkit-animation-delay: 3.2s, 4s; }
+    .active .s1-content .bounceInDelay2 {
+      animation-delay: 4s, 4.8s;
+      -webkit-animation-delay: 4s, 4.8s; }
+    .active .s1-content .bounceInDelay3 {
+      animation-delay: 4.8s, 5.6s;
+      -webkit-animation-delay: 4.8s, 5.6s; }
+    .active .s1-content .bounceInDelay4 {
+      animation-delay: 5.6s, 6.4s;
+      -webkit-animation-delay: 5.6s, 6.4s; }
+    .active .s1-content .bounceInDelay5 {
+      animation-delay: 6.4s, 7.2s;
+      -webkit-animation-delay: 6.4s, 7.2s; }
+    .active .s1-content .bounceInDelay6 {
+      animation-delay: 7.2s, 8s;
+      -webkit-animation-delay: 7.2s, 8s; }
+  .active .s2-content {
+    background-color: #fff;
+    position: absolute;
+    width: 800px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -225px; }
+    .active .s2-content .programmer {
+      width: 204px;
+      height: 353px;
+      left: 40px;
+      top: 70px;
+      background: url("../image/programmer.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: flipInX 1s;
+      -webkit-animation: flipInX 1s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s2-content .bulb-bottom {
+      width: 150px;
+      height: 150px;
+      left: 220px;
+      top: 0;
+      background: url("../image/bulb-bottom.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: bounceIn 0.7s 1s;
+      -webkit-animation: bounceIn 0.7s 1s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s2-content .bulb-top {
+      width: 150px;
+      height: 150px;
+      left: 220px;
+      top: 0;
+      background: url("../image/bulb-top.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: flash 0.8s 1.7s;
+      -webkit-animation: flash 0.8s 1.7s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s2-content .blackboard {
+      width: 500px;
+      height: 300px;
+      left: 270px;
+      top: 120px;
+      background: url("../image/blackboard.jpg") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      border: 8px solid #fbca87;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      animation: flipInX 0.7s 2.5s;
+      -webkit-animation: flipInX 0.7s 2.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .s2-html {
+      top: 220px;
+      left: 320px;
+      position: absolute;
+      color: #fff;
+      font-size: 18px; }
+
+    .s2-css {
+      top: 220px;
+      left: 440px;
+      position: absolute;
+      color: #fff;
+      font-size: 18px; }
+
+    .s2-javascript {
+      top: 220px;
+      left: 550px;
+      position: absolute;
+      color: #fff;
+      font-size: 18px; }
+
+    .s2-jquery {
+      top: 265px;
+      left: 320px;
+      position: absolute;
+      color: #fff;
+      font-size: 18px; }
+
+    .s2-html5 {
+      top: 265px;
+      left: 440px;
+      position: absolute;
+      color: #fff;
+      font-size: 18px; }
+
+    .s2-css3 {
+      top: 265px;
+      left: 570px;
+      position: absolute;
+      color: #fff;
+      font-size: 18px; }
+
+    .s2-php {
+      top: 310px;
+      left: 320px;
+      position: absolute;
+      color: #fff;
+      font-size: 18px; }
+
+    .s2-gulp {
+      top: 310px;
+      left: 420px;
+      position: absolute;
+      color: #fff;
+      font-size: 18px; }
+
+    .s2-sass {
+      top: 310px;
+      left: 550px;
+      position: absolute;
+      color: #fff;
+      font-size: 18px; }
+
+    .s2-git {
+      top: 355px;
+      left: 320px;
+      position: absolute;
+      color: #fff;
+      font-size: 18px; }
+
+    .s2-nodejs {
+      top: 355px;
+      left: 420px;
+      position: absolute;
+      color: #fff;
+      font-size: 18px; }
+
+    .s2-angular {
+      top: 355px;
+      left: 550px;
+      position: absolute;
+      color: #fff;
+      font-size: 18px; }
+    .active .s2-content .bounceInDown {
+      animation: bounceInDown 0.5s;
+      -webkit-animation: bounceInDown 0.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s2-content .bounceInDownDelay1 {
+      animation-delay: 3s;
+      -webkit-animation-delay: 3s; }
+    .active .s2-content .bounceInDownDelay2 {
+      animation-delay: 3.5s;
+      -webkit-animation-delay: 3.5s; }
+    .active .s2-content .bounceInDownDelay3 {
+      animation-delay: 4s;
+      -webkit-animation-delay: 4s; }
+    .active .s2-content .bounceInDownDelay4 {
+      animation-delay: 4.5s;
+      -webkit-animation-delay: 4.5s; }
+    .active .s2-content .bounceInDownDelay5 {
+      animation-delay: 5s;
+      -webkit-animation-delay: 5s; }
+    .active .s2-content .bounceInDownDelay6 {
+      animation-delay: 5.5s;
+      -webkit-animation-delay: 5.5s; }
+    .active .s2-content .bounceInDownDelay7 {
+      animation-delay: 6s;
+      -webkit-animation-delay: 6s; }
+    .active .s2-content .bounceInDownDelay8 {
+      animation-delay: 6.5s;
+      -webkit-animation-delay: 6.5s; }
+    .active .s2-content .bounceInDownDelay9 {
+      animation-delay: 7s;
+      -webkit-animation-delay: 7s; }
+    .active .s2-content .bounceInDownDelay10 {
+      animation-delay: 7.5s;
+      -webkit-animation-delay: 7.5s; }
+    .active .s2-content .bounceInDownDelay11 {
+      animation-delay: 8s;
+      -webkit-animation-delay: 8s; }
+    .active .s2-content .bounceInDownDelay12 {
+      animation-delay: 8.5s;
+      -webkit-animation-delay: 8.5s; }
+  .active .s3-content {
+    width: 800px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -250px;
+    position: absolute; }
+    .active .s3-content .s3-sun {
+      width: 155px;
+      height: 150px;
+      left: 600px;
+      top: 0;
+      background: url("../image/sun/sun-noeyes.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: flipInX 1s;
+      -webkit-animation: flipInX 1s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-sun-lefteyes {
+      width: 155px;
+      height: 150px;
+      left: 600px;
+      top: 0;
+      background: url("../image/sun/sun-left-eyes.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: blink 2.5s ease-out infinite normal;
+      -webkit-animation: blink 2.5s ease-out infinite normal;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-sun-righteyes {
+      width: 155px;
+      height: 150px;
+      left: 600px;
+      top: 0;
+      background: url("../image/sun/sun-right-eyes.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: blink 2.5s ease-out infinite alternate;
+      -webkit-animation: blink 2.5s ease-out infinite alternate;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+  @keyframes blink {
+    0% {
+      height: 150px;
+      top: 0; }
+    10% {
+      height: 0px;
+      top: 75px; }
+    20% {
+      height: 150px;
+      top: 0; }
+    75%,100% {
+      height: 150px;
+      top: 0; } }
+  @-webkit-keyframes blink {
+    0% {
+      height: 150px;
+      top: 0; }
+    10% {
+      height: 0px;
+      top: 75px; }
+    20% {
+      height: 150px;
+      top: 0; }
+    75%,100% {
+      height: 150px;
+      top: 0; } }
+    .active .s3-content .s3-cloud {
+      width: 200px;
+      height: 100px;
+      left: 250px;
+      top: 0;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation-name: lightSpeedIn, cloud-ltor;
+      -webkit-animation-name: lightSpeedIn, cloud-ltor;
+      animation-duration: 1s, 8s;
+      -webkit-animation-duration: 1s, 8s;
+      animation-delay: 0.5s, 1.5s;
+      -webkit-animation-delay: 0.5s, 1.5s;
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-timing-function: ease, linear;
+      -webkit-animation-timing-function: ease, linear;
+      animation-direction: normal, alternate;
+      -webkit-animation-direction: normal, alternate;
+      animation-fill-mode: both, both;
+      -webkit-animation-fill-mode: both, both; }
+  @keyframes cloud-ltor {
+    0% {
+      left: 250px; }
+    100% {
+      left: 400px; } }
+  @-webkit-keyframes cloud-ltor {
+    0% {
+      left: 250px; }
+    100% {
+      left: 400px; } }
+    .active .s3-content .s3-bear {
+      animation: slideInLeft 1s 1s;
+      -webkit-animation: slideInLeft 1s 1s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-bear-top {
+      width: 200px;
+      height: 340px;
+      left: 250px;
+      top: 130px;
+      background: url("../image/bear/bear-top.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 2; }
+    .active .s3-content .s3-bear-behind {
+      width: 55px;
+      height: 55px;
+      left: 250px;
+      top: 420px;
+      background: url("../image/bear/bear-behind.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation: circle 3s linear infinite normal;
+      -webkit-animation: circle 3s linear infinite normal;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-bear-front {
+      width: 120px;
+      height: 120px;
+      left: 315px;
+      top: 360px;
+      background: url("../image/bear/bear-front.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation: circle 3s linear infinite normal;
+      -webkit-animation: circle 3s linear infinite normal;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+  @keyframes circle {
+    0% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg); }
+    100% {
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg); } }
+  @-webkit-keyframes circle {
+    0% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg); }
+    100% {
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg); } }
+    .active .s3-content .s3-think {
+      width: 100px;
+      height: 85px;
+      left: 450px;
+      top: 100px;
+      background: url("../image/think.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: bounceIn 0.5s 2s;
+      -webkit-animation: bounceIn 0.5s 2s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-cat666 {
+      width: 250px;
+      height: 188px;
+      left: 50px;
+      top: 20px;
+      background: url("../image/cat666.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: bounceIn 1s 2.5s;
+      -webkit-animation: bounceIn 1s 2.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-kfzxw {
+      width: 350px;
+      height: 350px;
+      left: 450px;
+      top: 160px;
+      background: url("../image/kfzxw.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: bounceIn 1s 2.5s;
+      -webkit-animation: bounceIn 1s 2.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-zj {
+      width: 250px;
+      height: 198px;
+      left: 0px;
+      top: 280px;
+      background: url("../image/zj.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: bounceIn 1s 2.5s;
+      -webkit-animation: bounceIn 1s 2.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+  .active .s4-content {
+    width: 800px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -250px;
+    position: absolute; }
+    .active .s4-content .s4-rocket {
+      width: 160px;
+      height: 280px;
+      left: 350px;
+      top: 50px;
+      background: url("../image/space/rocket.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation-name: bounceInUp, Floating;
+      -webkit-animation-name: bounceInUp, Floating;
+      animation-duration: 1s, 3s;
+      -webkit-animation-duration: 1s, 3s;
+      animation-delay: 2.5s, 3.5s;
+      -webkit-animation-delay: 2.5s, 3.5s;
+      animation-timing-function: ease, cubic-bezier(0.5, 0, 0.1, 1);
+      -webkit-animation-timing-function: ease, cubic-bezier(0.5, 0, 0.1, 1);
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-fill-mode: both, both;
+      -webkit-animation-fill-mode: both, both; }
+  @keyframes Floating {
+    0%,100% {
+      top: 50px; }
+    50% {
+      top: 80px; } }
+  @-webkit-keyframes Floating {
+    0%,100% {
+      top: 50px; }
+    50% {
+      top: 80px; } }
+    .active .s4-content .s4-meteor {
+      width: 140px;
+      height: 120px;
+      left: 460px;
+      top: 0;
+      background: url("../image/space/meteor.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 3;
+      animation: s4-meteor 0.6s 2s linear;
+      -webkit-animation: s4-meteor 0.6s 2s linear;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+  @keyframes s4-meteor {
+    from {
+      top: 200px;
+      left: -140px;
+      transform: rotate(0deg);
+      opacity: 0; }
+    20% {
+      top: 160px;
+      left: 0;
+      transform: rotate(4deg);
+      opacity: 1; }
+    40% {
+      top: 120px;
+      left: 140px;
+      transform: rotate(8deg);
+      opacity: 1; }
+    60% {
+      top: 80px;
+      left: 280px;
+      transform: rotate(12deg);
+      opacity: 1; }
+    80% {
+      top: 40px;
+      left: 420px;
+      transform: rotate(16deg);
+      opacity: 1; }
+    to {
+      top: 0;
+      left: 560px;
+      transform: rotate(20deg);
+      opacity: 1; } }
+    .active .s4-content .s4-planet {
+      width: 204px;
+      height: 139px;
+      left: 60px;
+      top: 90px;
+      background: url("../image/space/planet.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 2;
+      animation: flipInX 1s 0.5s;
+      -webkit-animation: flipInX 1s 0.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s4-content .s4-satellite {
+      width: 90px;
+      height: 60px;
+      left: 130px;
+      top: 140px;
+      background: url("../image/space/satellite.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation-name: bounceIn, s4-circle;
+      -webkit-animation-name: bounceIn, s4-circle;
+      animation-duration: 1s, 15s;
+      -webkit-animation-duration: 1s, 15s;
+      animation-delay: 1.5s, 1.5s;
+      -webkit-animation-delay: 1.5s, 1.5s;
+      animation-timing-function: ease, linear;
+      -webkit-animation-timing-function: ease, linear;
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-fill-mode: both, both;
+      -webkit-animation-fill-mode: both, both; }
+  @keyframes s4-circle {
+    from {
+      transform: rotate(0deg) translate(120px, 30px) rotate(0deg);
+      width: 90px;
+      height: 60px; }
+    20% {
+      transform: rotate(90deg) translate(120px, 30px) rotate(-90deg);
+      width: 80px;
+      height: 52px; }
+    40% {
+      transform: rotate(180deg) translate(120px, 30px) rotate(-180deg);
+      width: 60px;
+      height: 40px; }
+    70% {
+      transform: rotate(270deg) translate(120px, 30px) rotate(-270deg);
+      width: 80px;
+      height: 52px; }
+    to {
+      transform: rotate(360deg) translate(120px, 30px) rotate(-360deg);
+      width: 90px;
+      height: 60px; } }
+  @-webkit-keyframes s4-circle {
+    from {
+      transform: rotate(0deg) translate(120px, 30px) rotate(0deg);
+      width: 90px;
+      height: 60px; }
+    20% {
+      transform: rotate(90deg) translate(120px, 30px) rotate(-90deg);
+      width: 80px;
+      height: 52px; }
+    40% {
+      transform: rotate(180deg) translate(120px, 30px) rotate(-180deg);
+      width: 60px;
+      height: 40px; }
+    70% {
+      transform: rotate(270deg) translate(120px, 30px) rotate(-270deg);
+      width: 80px;
+      height: 52px; }
+    to {
+      transform: rotate(360deg) translate(120px, 30px) rotate(-360deg);
+      width: 90px;
+      height: 60px; } }
+    .active .s4-content .s4-QQ {
+      width: 100px;
+      height: 100px;
+      left: 180px;
+      top: 380px;
+      background: url("../image/QQ.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation: bounceIn 0.5s 3.5s;
+      -webkit-animation: bounceIn 0.5s 3.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s4-content .s4-QQ-number {
+      width: 100px;
+      height: 20px;
+      left: 180px;
+      top: 480px;
+      position: absolute;
+      z-index: 2;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      animation: bounceIn 0.5s 5s;
+      -webkit-animation: bounceIn 0.5s 5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s4-content .s4-email {
+      width: 100px;
+      height: 100px;
+      left: 390px;
+      top: 380px;
+      background: url("../image/email.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation: bounceIn 0.5s 4s;
+      -webkit-animation: bounceIn 0.5s 4s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s4-content .s4-email-link {
+      width: 100px;
+      height: 20px;
+      left: 340px;
+      top: 480px;
+      position: absolute;
+      z-index: 2;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      animation: bounceIn 0.5s 5s;
+      -webkit-animation: bounceIn 0.5s 5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s4-content .s4-sina {
+      width: 100px;
+      height: 100px;
+      left: 600px;
+      top: 380px;
+      background: url("../image/sina.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation: bounceIn 0.5s 4.5s;
+      -webkit-animation: bounceIn 0.5s 4.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s4-content .s4-sina-link {
+      width: 100px;
+      height: 20px;
+      left: 625px;
+      top: 480px;
+      position: absolute;
+      z-index: 2;
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+      animation: bounceIn 0.5s 5s;
+      -webkit-animation: bounceIn 0.5s 5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+
+  /* scene index */
+  .scene-ctrl {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    margin-top: -140px; }
+
+  .scene-ctrl a {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 10px 0;
+    background: url(https://combo.b.qq.com/account/hrtx/images/active/new-year-2015/bg-scene-ctrl.png) no-repeat center;
+    font: 0/0 a;
+    color: transparent; }
+
+  .scene-ctrl .cur {
+    background-image: url(https://combo.b.qq.com/account/hrtx/images/active/new-year-2015/bg-scene-ctrl-cur.png); } }
+@media screen and (max-width: 800px) {
+  .loading {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    z-index: 100; }
+
+  .loading img {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    left: 50%;
+    margin-left: -30px;
+    margin-top: -30px;
+    position: absolute; }
+
+  .scene-ctrl {
+    visibility: hidden; }
+
+  .arrow {
+    display: none; }
+
+  .active .s1-content {
+    width: 300px;
+    height: 420px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -210px;
+    position: absolute; }
+    .active .s1-content .cloud {
+      width: 100px;
+      height: 50px;
+      left: 0;
+      top: 0;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: sway 8s linear infinite alternate;
+      -webkit-animation: sway 8s linear infinite alternate; }
+  @keyframes sway {
+    0% {
+      left: 200px;
+      top: 0; }
+    25% {
+      left: 150px;
+      top: 25px; }
+    50% {
+      left: 100px;
+      top: 0; }
+    75% {
+      left: 50px;
+      top: 25px; }
+    100% {
+      left: 0;
+      top: 0; } }
+  @-webkit-keyframes sway {
+    0% {
+      left: 200px;
+      top: 0; }
+    25% {
+      left: 150px;
+      top: 25px; }
+    50% {
+      left: 100px;
+      top: 0; }
+    75% {
+      left: 50px;
+      top: 25px; }
+    100% {
+      left: 0;
+      top: 0; } }
+    .active .s1-content .s1-tag {
+      width: 120px;
+      height: 112px;
+      left: 20px;
+      top: 20px;
+      background: url("../image/aboutme.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation-name: lightSpeedIn, swing;
+      -webkit-animation-name: lightSpeedIn, swing;
+      animation-duration: 1s, 2s;
+      -webkit-animation-duration: 1s, 2s;
+      animation-delay: 0s, 1s;
+      -webkit-animation-delay: 0s, 1s;
+      animation-timing-function: ease-out, ease;
+      -webkit-animation-timing-function: ease-out, ease;
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-direction: normal, alternate;
+      -webkit-animation-direction: normal, alternate; }
+    .active .s1-content .headpic {
+      border-radius: 100%;
+      -webkit-border-radius: 100%;
+      width: 100px;
+      height: 100px;
+      display: block;
+      margin: 160px auto;
+      position: relative;
+      z-index: 50; }
+    .active .s1-content .circle {
+      animation-name: bounceIn, shine;
+      -webkit-animation-name: bounceIn, shine;
+      animation-duration: 0.6s, 1.5s;
+      -webkit-animation-duration: 0.6s, 1.5s;
+      animation-delay: 1s, 1.6s;
+      -webkit-animation-delay: 1s, 1.6s;
+      animation-timing-function: ease-in-out, ease;
+      -webkit-animation-timing-function: ease-in-out, ease;
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-direction: normal, alternate;
+      -webkit-animation-direction: normal, alternate;
+      animation-fill-mode: both, both;
+      -webkit-animation-fill-mode: both, both; }
+  @keyframes shine {
+    0% {
+      box-shadow: 0 0 5px #fff;
+      -webkit-box-shadow: 0 0 5px #fff; }
+    100% {
+      box-shadow: 0 0 20px #fff;
+      -webkit-box-shadow: 0 0 20px #fff; } }
+  @-webkit-keyframes shine {
+    0% {
+      box-shadow: 0 0 5px #fff;
+      -webkit-box-shadow: 0 0 5px #fff; }
+    100% {
+      box-shadow: 0 0 20px #fff;
+      -webkit-box-shadow: 0 0 20px #fff; } }
+    .active .s1-content .s1-line1 {
+      display: none; }
+    .active .s1-content .s1-line2 {
+      display: none; }
+    .active .s1-content .s1-line3 {
+      display: none; }
+    .active .s1-content .s1-line4 {
+      display: none; }
+    .active .s1-content .s1-name {
+      width: 80px;
+      height: 40px;
+      left: 120px;
+      top: 80px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 50px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .s1-school {
+      width: 200px;
+      height: 90px;
+      left: 80px;
+      top: 300px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 140px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .s1-want {
+      width: 120px;
+      height: 55px;
+      left: 30px;
+      top: 280px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 75px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .s1-status {
+      width: 120px;
+      height: 55px;
+      left: 180px;
+      top: 225px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 75px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .s1-sex {
+      width: 50px;
+      height: 25px;
+      left: 230px;
+      top: 120px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 30px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .s1-year {
+      width: 70px;
+      height: 35px;
+      left: 200px;
+      top: 170px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 45px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .s1-sing {
+      width: 80px;
+      height: 40px;
+      left: 20px;
+      top: 150px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 50px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .s1-friend {
+      width: 100px;
+      height: 50px;
+      left: 20px;
+      top: 200px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 60px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .s1-sport {
+      width: 80px;
+      height: 40px;
+      left: 150px;
+      top: 130px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      line-height: 50px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      position: absolute;
+      color: #706f7f; }
+    .active .s1-content .bounceIn {
+      animation-name: bounceIn, stayBounceIn;
+      -webkit-animation-name: bounceIn, stayBounceIn;
+      animation-duration: 0.8s, 6s;
+      -webkit-animation-duration: 0.8s, 6s;
+      animation-timing-function: ease-out, linear;
+      -webkit-animation-timing-function: ease-out, linear;
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-direction: normal, alternate;
+      -webkit-animation-direction: normal, alternate;
+      animation-fill-mode: both, forwards;
+      -webkit-animation-fill-mode: both, forwards; }
+    .active .s1-content .bounceInDelay1 {
+      animation-delay: 2s, 2.8s;
+      -webkit-animation-delay: 2s, 2.8s; }
+    .active .s1-content .bounceInDelay2 {
+      animation-delay: 2.8s, 3.6s;
+      -webkit-animation-delay: 2.8s, 3.6s; }
+    .active .s1-content .bounceInDelay3 {
+      animation-delay: 3.6s, 4.4s;
+      -webkit-animation-delay: 3.6s, 4.4s; }
+    .active .s1-content .bounceInDelay4 {
+      animation-delay: 4.4s, 5.2s;
+      -webkit-animation-delay: 4.4s, 5.2s; }
+    .active .s1-content .bounceInDelay5 {
+      animation-delay: 5.2s, 6s;
+      -webkit-animation-delay: 5.2s, 6s; }
+    .active .s1-content .bounceInDelay6 {
+      animation-delay: 6s, 6.8s;
+      -webkit-animation-delay: 6s, 6.8s; }
+  .active .s2-content {
+    width: 300px;
+    height: 420px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -210px;
+    position: absolute;
+    background-color: #fff; }
+    .active .s2-content .programmer {
+      width: 120px;
+      height: 200px;
+      left: 80px;
+      top: 15px;
+      background: url("../image/programmer.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: flipInX 1s;
+      -webkit-animation: flipInX 1s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s2-content .bulb-bottom {
+      width: 100px;
+      height: 100px;
+      left: 200px;
+      top: 0;
+      background: url("../image/bulb-bottom.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: bounceIn 0.7s 1s;
+      -webkit-animation: bounceIn 0.7s 1s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s2-content .bulb-top {
+      width: 100px;
+      height: 100px;
+      left: 200px;
+      top: 0;
+      background: url("../image/bulb-top.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: flash 0.8s 1.7s;
+      -webkit-animation: flash 0.8s 1.7s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s2-content .blackboard {
+      width: 280px;
+      height: 180px;
+      left: 0px;
+      top: 220px;
+      background: url("../image/blackboard.jpg") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      position: absolute;
+      border: 8px solid #fbca87;
+      animation: flipInX 0.7s 2.5s;
+      -webkit-animation: flipInX 0.7s 2.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .s2-html {
+      top: 280px;
+      left: 30px;
+      position: absolute;
+      color: #fff;
+      font-size: 13px; }
+
+    .s2-css {
+      top: 280px;
+      left: 110px;
+      position: absolute;
+      color: #fff;
+      font-size: 13px; }
+
+    .s2-javascript {
+      top: 280px;
+      left: 180px;
+      position: absolute;
+      color: #fff;
+      font-size: 13px; }
+
+    .s2-jquery {
+      top: 310px;
+      left: 30px;
+      position: absolute;
+      color: #fff;
+      font-size: 13px; }
+
+    .s2-html5 {
+      top: 310px;
+      left: 120px;
+      position: absolute;
+      color: #fff;
+      font-size: 13px; }
+
+    .s2-css3 {
+      top: 310px;
+      left: 205px;
+      position: absolute;
+      color: #fff;
+      font-size: 13px; }
+
+    .s2-php {
+      top: 340px;
+      left: 30px;
+      position: absolute;
+      color: #fff;
+      font-size: 13px; }
+
+    .s2-gulp {
+      top: 340px;
+      left: 100px;
+      position: absolute;
+      color: #fff;
+      font-size: 13px; }
+
+    .s2-sass {
+      top: 340px;
+      left: 190px;
+      position: absolute;
+      color: #fff;
+      font-size: 13px; }
+
+    .s2-git {
+      top: 370px;
+      left: 30px;
+      position: absolute;
+      color: #fff;
+      font-size: 13px; }
+
+    .s2-nodejs {
+      top: 370px;
+      left: 90px;
+      position: absolute;
+      color: #fff;
+      font-size: 13px; }
+
+    .s2-angular {
+      top: 370px;
+      left: 180px;
+      position: absolute;
+      color: #fff;
+      font-size: 13px; }
+    .active .s2-content .bounceInDown {
+      animation: bounceInDown 0.5s;
+      -webkit-animation: bounceInDown 0.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s2-content .bounceInDownDelay1 {
+      animation-delay: 3s;
+      -webkit-animation-delay: 3s; }
+    .active .s2-content .bounceInDownDelay2 {
+      animation-delay: 3.5s;
+      -webkit-animation-delay: 3.5s; }
+    .active .s2-content .bounceInDownDelay3 {
+      animation-delay: 4s;
+      -webkit-animation-delay: 4s; }
+    .active .s2-content .bounceInDownDelay4 {
+      animation-delay: 4.5s;
+      -webkit-animation-delay: 4.5s; }
+    .active .s2-content .bounceInDownDelay5 {
+      animation-delay: 5s;
+      -webkit-animation-delay: 5s; }
+    .active .s2-content .bounceInDownDelay6 {
+      animation-delay: 5.5s;
+      -webkit-animation-delay: 5.5s; }
+    .active .s2-content .bounceInDownDelay7 {
+      animation-delay: 6s;
+      -webkit-animation-delay: 6s; }
+    .active .s2-content .bounceInDownDelay8 {
+      animation-delay: 6.5s;
+      -webkit-animation-delay: 6.5s; }
+    .active .s2-content .bounceInDownDelay9 {
+      animation-delay: 7s;
+      -webkit-animation-delay: 7s; }
+    .active .s2-content .bounceInDownDelay10 {
+      animation-delay: 7.5s;
+      -webkit-animation-delay: 7.5s; }
+    .active .s2-content .bounceInDownDelay11 {
+      animation-delay: 8s;
+      -webkit-animation-delay: 8s; }
+    .active .s2-content .bounceInDownDelay12 {
+      animation-delay: 8.5s;
+      -webkit-animation-delay: 8.5s; }
+  .active .s3-content {
+    width: 300px;
+    height: 420px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -210px;
+    position: absolute;
+    overflow: hidden; }
+    .active .s3-content .s3-sun {
+      width: 100px;
+      height: 94px;
+      left: 200px;
+      top: 0;
+      background: url("../image/sun/sun-noeyes.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: flipInX 1s;
+      -webkit-animation: flipInX 1s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-sun-lefteyes {
+      width: 100px;
+      height: 94px;
+      left: 200px;
+      top: 0;
+      background: url("../image/sun/sun-left-eyes.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: blink 2.5s ease-out infinite normal;
+      -webkit-animation: blink 2.5s ease-out infinite normal;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-sun-righteyes {
+      width: 100px;
+      height: 94px;
+      left: 200px;
+      top: 0;
+      background: url("../image/sun/sun-right-eyes.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: blink 2.5s ease-out infinite alternate;
+      -webkit-animation: blink 2.5s ease-out infinite alternate;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+  @keyframes blink {
+    0% {
+      height: 94px;
+      top: 0; }
+    10% {
+      height: 0px;
+      top: 47px; }
+    20% {
+      height: 94px;
+      top: 0; }
+    75%,100% {
+      height: 94px;
+      top: 0; } }
+  @-webkit-keyframes blink {
+    0% {
+      height: 94px;
+      top: 0; }
+    10% {
+      height: 0px;
+      top: 47px; }
+    20% {
+      height: 94px;
+      top: 0; }
+    75%,100% {
+      height: 94px;
+      top: 0; } }
+    .active .s3-content .s3-cloud {
+      width: 120px;
+      height: 60px;
+      top: 30px;
+      background: url("../image/cloud.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation-name: lightSpeedIn, cloud-ltor;
+      -webkit-animation-name: lightSpeedIn, cloud-ltor;
+      animation-duration: 1s, 8s;
+      -webkit-animation-duration: 1s, 8s;
+      animation-delay: 0.5s, 1.5s;
+      -webkit-animation-delay: 0.5s, 1.5s;
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-direction: normal, alternate;
+      -webkit-animation-direction: normal, alternate;
+      animation-timing-function: ease, linear;
+      -webkit-animation-timing-function: ease, linear;
+      animation-fill-mode: both, both;
+      -webkit-animation-fill-mode: both, both; }
+  @keyframes cloud-ltor {
+    0% {
+      left: 130px; }
+    100% {
+      left: 30px; } }
+  @-webkit-keyframes cloud-ltor {
+    0% {
+      left: 130px; }
+    100% {
+      left: 30px; } }
+    .active .s3-content .s3-bear {
+      animation: slideInLeft 1s 1s;
+      -webkit-animation: slideInLeft 1s 1s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-bear-top {
+      width: 150px;
+      height: 250px;
+      left: 80px;
+      top: 130px;
+      background: url("../image/bear/bear-top.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 2; }
+    .active .s3-content .s3-bear-behind {
+      width: 40px;
+      height: 40px;
+      left: 80px;
+      top: 340px;
+      background: url("../image/bear/bear-behind.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation: circle 3s linear infinite normal;
+      -webkit-animation: circle 3s linear infinite normal;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-bear-front {
+      width: 90px;
+      height: 90px;
+      left: 135px;
+      top: 300px;
+      background: url("../image/bear/bear-front.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation: circle 3s linear infinite normal;
+      -webkit-animation: circle 3s linear infinite normal;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+  @keyframes circle {
+    0% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg); }
+    100% {
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg); } }
+  @-webkit-keyframes circle {
+    0% {
+      transform: rotate(0deg);
+      -webkit-transform: rotate(0deg); }
+    100% {
+      transform: rotate(360deg);
+      -webkit-transform: rotate(360deg); } }
+    .active .s3-content .s3-think {
+      width: 80px;
+      height: 70px;
+      left: 200px;
+      top: 100px;
+      background: url("../image/think.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: bounceIn 0.5s 2s;
+      -webkit-animation: bounceIn 0.5s 2s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-cat666 {
+      width: 120px;
+      height: 90px;
+      left: 0px;
+      top: 120px;
+      background: url("../image/cat666.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: bounceIn 1s 2.5s;
+      -webkit-animation: bounceIn 1s 2.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-kfzxw {
+      width: 120px;
+      height: 120px;
+      left: 180px;
+      top: 180px;
+      background: url("../image/kfzxw.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: bounceIn 1s 2.5s;
+      -webkit-animation: bounceIn 1s 2.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s3-content .s3-zj {
+      width: 120px;
+      height: 95px;
+      left: 0px;
+      top: 220px;
+      background: url("../image/zj.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      animation: bounceIn 1s 2.5s;
+      -webkit-animation: bounceIn 1s 2.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+  .active .s4-content {
+    width: 300px;
+    height: 420px;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: -210px;
+    position: absolute; }
+    .active .s4-content .s4-rocket {
+      width: 120px;
+      height: 210px;
+      left: 30px;
+      top: 210px;
+      background: url("../image/space/rocket.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation-name: bounceInUp, Floating;
+      -webkit-animation-name: bounceInUp, Floating;
+      animation-duration: 1s, 3s;
+      -webkit-animation-duration: 1s, 3s;
+      animation-delay: 2.5s, 3.5s;
+      -webkit-animation-delay: 2.5s, 3.5s;
+      animation-timing-function: ease, cubic-bezier(0.5, 0, 0.1, 1);
+      -webkit-animation-timing-function: ease, cubic-bezier(0.5, 0, 0.1, 1);
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-fill-mode: both, both;
+      -webkit-animation-fill-mode: both, both; }
+  @keyframes Floating {
+    0%,100% {
+      top: 210px; }
+    50% {
+      top: 190px; } }
+  @-webkit-keyframes Floating {
+    0%,100% {
+      top: 210px; }
+    50% {
+      top: 190px; } }
+    .active .s4-content .s4-meteor {
+      width: 70px;
+      height: 60px;
+      left: 230px;
+      top: 0;
+      background: url("../image/space/meteor.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 4;
+      animation: s4-meteor 0.6s linear 2s;
+      -webkit-animation: s4-meteor 0.6s linear 2s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+  @keyframes s4-meteor {
+    from {
+      top: 200px;
+      left: -70px;
+      transform: rotate(0deg);
+      opacity: 0; }
+    20% {
+      top: 160px;
+      left: -10px;
+      transform: rotate(4deg);
+      opacity: 1; }
+    40% {
+      top: 120px;
+      left: 50px;
+      transform: rotate(8deg);
+      opacity: 1; }
+    60% {
+      top: 80px;
+      left: 110px;
+      transform: rotate(12deg);
+      opacity: 1; }
+    80% {
+      top: 40px;
+      left: 170px;
+      transform: rotate(16deg);
+      opacity: 1; }
+    to {
+      top: 0;
+      left: 230px;
+      transform: rotate(20deg);
+      opacity: 1; } }
+  @-webkit-keyframes s4-meteor {
+    from {
+      top: 200px;
+      left: -70px;
+      transform: rotate(0deg);
+      opacity: 0; }
+    20% {
+      top: 160px;
+      left: -10px;
+      transform: rotate(4deg);
+      opacity: 1; }
+    40% {
+      top: 120px;
+      left: 50px;
+      transform: rotate(8deg);
+      opacity: 1; }
+    60% {
+      top: 80px;
+      left: 110px;
+      transform: rotate(12deg);
+      opacity: 1; }
+    80% {
+      top: 40px;
+      left: 170px;
+      transform: rotate(16deg);
+      opacity: 1; }
+    to {
+      top: 0;
+      left: 230px;
+      transform: rotate(20deg);
+      opacity: 1; } }
+    .active .s4-content .s4-planet {
+      width: 150px;
+      height: 100px;
+      left: 60px;
+      top: 50px;
+      background: url("../image/space/planet.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 3;
+      animation: flipInX 1s 0.5s;
+      -webkit-animation: flipInX 1s 0.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s4-content .s4-satellite {
+      width: 60px;
+      height: 40px;
+      left: 130px;
+      top: 100px;
+      background: url("../image/space/satellite.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 2;
+      animation-name: bounceIn, s4-circle;
+      -webkit-animation-name: bounceIn, s4-circle;
+      animation-delay: 1.5s, 1.5s;
+      -webkit-animation-delay: 1.5s, 1.5s;
+      animation-duration: 1s, 15s;
+      -webkit-animation-duration: 1s, 15s;
+      animation-iteration-count: 1, infinite;
+      -webkit-animation-iteration-count: 1, infinite;
+      animation-timing-function: ease, linear;
+      -webkit-animation-timing-function: ease, linear;
+      animation-fill-mode: both, both;
+      -webkit-animation-fill-mode: both, both; }
+  @keyframes s4-circle {
+    from {
+      transform: rotate(0deg) translate(100px, 20px) rotate(0deg);
+      width: 60px;
+      height: 40px; }
+    20% {
+      transform: rotate(90deg) translate(100px, 20px) rotate(-90deg);
+      width: 50px;
+      height: 42px; }
+    40% {
+      transform: rotate(180deg) translate(100px, 20px) rotate(-180deg);
+      width: 30px;
+      height: 20px; }
+    70% {
+      transform: rotate(270deg) translate(100px, 20px) rotate(-270deg);
+      width: 50px;
+      height: 42px; }
+    to {
+      transform: rotate(360deg) translate(100px, 20px) rotate(-360deg);
+      width: 60px;
+      height: 40px; } }
+  @-webkit-keyframes s4-circle {
+    from {
+      transform: rotate(0deg) translate(100px, 20px) rotate(0deg);
+      width: 60px;
+      height: 40px; }
+    20% {
+      transform: rotate(90deg) translate(100px, 20px) rotate(-90deg);
+      width: 50px;
+      height: 42px; }
+    40% {
+      transform: rotate(180deg) translate(100px, 20px) rotate(-180deg);
+      width: 30px;
+      height: 20px; }
+    70% {
+      transform: rotate(270deg) translate(100px, 20px) rotate(-270deg);
+      width: 50px;
+      height: 42px; }
+    to {
+      transform: rotate(360deg) translate(100px, 20px) rotate(-360deg);
+      width: 60px;
+      height: 40px; } }
+    .active .s4-content .s4-QQ {
+      width: 50px;
+      height: 50px;
+      left: 200px;
+      top: 200px;
+      background: url("../image/QQ.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation: bounceIn 0.5s 3.5s;
+      -webkit-animation: bounceIn 0.5s 3.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s4-content .s4-QQ-number {
+      width: 100px;
+      height: 20px;
+      left: 195px;
+      top: 250px;
+      position: absolute;
+      z-index: 2;
+      color: #fff;
+      font-size: 13px;
+      animation: bounceIn 0.5s 5s;
+      -webkit-animation: bounceIn 0.5s 5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s4-content .s4-email {
+      width: 50px;
+      height: 50px;
+      left: 200px;
+      top: 270px;
+      background: url("../image/email.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation: bounceIn 0.5s 4s;
+      -webkit-animation: bounceIn 0.5s 4s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s4-content .s4-email-link {
+      width: 100px;
+      height: 20px;
+      left: 170px;
+      top: 320px;
+      position: absolute;
+      z-index: 2;
+      color: #fff;
+      font-size: 13px;
+      animation: bounceIn 0.5s 5s;
+      -webkit-animation: bounceIn 0.5s 5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s4-content .s4-sina {
+      width: 50px;
+      height: 50px;
+      left: 200px;
+      top: 340px;
+      background: url("../image/sina.png") no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      z-index: 1;
+      animation: bounceIn 0.5s 4.5s;
+      -webkit-animation: bounceIn 0.5s 4.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; }
+    .active .s4-content .s4-sina-link {
+      width: 100px;
+      height: 20px;
+      left: 205px;
+      top: 390px;
+      position: absolute;
+      z-index: 2;
+      color: #fff;
+      font-size: 13px;
+      animation: bounceIn 0.5s 5s;
+      -webkit-animation: bounceIn 0.5s 5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both; } }
+@keyframes arrow {
+  0%,100% {
+    bottom: 10px;
+    opacity: 1; }
+  50% {
+    bottom: 50px;
+    opacity: 0.5; } }
+@-webkit-keyframes arrow {
+  0%,100% {
+    bottom: 10px;
+    opacity: 1; }
+  50% {
+    bottom: 50px;
+    opacity: .5; } }
+/*swing*/
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg); }
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg); }
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg); }
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg); }
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg); } }
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg); }
+  40% {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg); }
+  60% {
+    -webkit-transform: rotate3d(0, 0, 1, 5deg);
+    transform: rotate3d(0, 0, 1, 5deg); }
+  80% {
+    -webkit-transform: rotate3d(0, 0, 1, -5deg);
+    transform: rotate3d(0, 0, 1, -5deg); }
+  to {
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+    transform: rotate3d(0, 0, 1, 0deg); } }
+/*lightspeedIn*/
+@-webkit-keyframes lightSpeedIn {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0; }
+  60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1; }
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+    opacity: 1; }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1; } }
+@keyframes lightSpeedIn {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(-30deg);
+    transform: translate3d(100%, 0, 0) skewX(-30deg);
+    opacity: 0; }
+  60% {
+    -webkit-transform: skewX(20deg);
+    transform: skewX(20deg);
+    opacity: 1; }
+  80% {
+    -webkit-transform: skewX(-5deg);
+    transform: skewX(-5deg);
+    opacity: 1; }
+  to {
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1; } }
+@-webkit-keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0; }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1; }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg); }
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px); } }
+@keyframes flipInX {
+  from {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+    opacity: 0; }
+  40% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in; }
+  60% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1; }
+  80% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg); }
+  to {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px); } }
+/*bounceIn*/
+@-webkit-keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0, 0, 0);
+    transform: scale3d(0, 0, 0); }
+  20% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2); }
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03); }
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+@keyframes bounceIn {
+  from, 20%, 40%, 60%, 80%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0, 0, 0);
+    transform: scale3d(0, 0, 0); }
+  20% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2); }
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03); }
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+/*stayBounceIn*/
+@-webkit-keyframes stayBounceIn {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+@keyframes stayBounceIn {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  50% {
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+@-webkit-keyframes flash {
+  from ,40%, 80% {
+    opacity: 0; }
+  20%, 60%, to {
+    opacity: 1; } }
+@keyframes flash {
+  from ,40%, 80% {
+    opacity: 0; }
+  20%, 60%, to {
+    opacity: 1; } }
+@keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -3000px, 0);
+    transform: translate3d(0, -3000px, 0); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 25px, 0);
+    transform: translate3d(0, 25px, 0); }
+  75% {
+    -webkit-transform: translate3d(0, -10px, 0);
+    transform: translate3d(0, -10px, 0); }
+  90% {
+    -webkit-transform: translate3d(0, 5px, 0);
+    transform: translate3d(0, 5px, 0); }
+  to {
+    -webkit-transform: none;
+    transform: none; } }
+@-webkit-keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes slideInLeft {
+  from {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes slideInRight {
+  from {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    visibility: visible; }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@-webkit-keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0); }
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0); }
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0); }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0); }
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0); }
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0); }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0); } }
